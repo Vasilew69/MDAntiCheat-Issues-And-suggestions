@@ -1,0 +1,41 @@
+name: Sync labels
+
+on:
+  push:
+    branches: [main]
+    paths: [.github/labels.json]
+  workflow_dispatch:
+
+# Setting permissions turns off everything not listed, so checkout needs contents: read
+# (without it, checking out a private repo fails with "repository not found").
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            // Edit .github/labels.json (via a PR) to add, rename or recolor labels.
+            const wanted = JSON.parse(fs.readFileSync('.github/labels.json', 'utf8'));
+            const existing = await github.paginate(github.rest.issues.listLabelsForRepo, {
+              owner: context.repo.owner, repo: context.repo.repo, per_page: 100
+            });
+            const byName = new Map(existing.map((l) => [l.name.toLowerCase(), l]));
+            for (const label of wanted) {
+              const params = { owner: context.repo.owner, repo: context.repo.repo,
+                name: label.name, color: String(label.color), description: label.description || '' };
+              const current = byName.get(label.name.toLowerCase());
+              if (!current) {
+                await github.rest.issues.createLabel(params);
+                core.info(`created ${label.name}`);
+              } else if (current.color !== params.color || (current.description || '') !== params.description) {
+                await github.rest.issues.updateLabel({ ...params, name: current.name, new_name: label.name });
+                core.info(`updated ${label.name}`);
+              }
+            }

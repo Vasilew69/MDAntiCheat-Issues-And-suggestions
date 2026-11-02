@@ -1,0 +1,48 @@
+name: Undetected cheat
+description: A cheat or hacked client gets past MDAntiCheat
+title: "[Bypass] "
+labels: [bypass, needs-triage]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please don't post download links to cheat clients. Naming the client and the module is enough.
+  - type: input
+    id: client
+    attributes:
+      label: Cheat client and module
+      placeholder: Meteor 0.5.8, "Speed" module in Strafe mode
+    validations:
+      required: true
+  - type: textarea
+    id: settings
+    attributes:
+      label: Module settings
+      description: The settings the module was set to, if you know them.
+  - type: textarea
+    id: what
+    attributes:
+      label: What does it let the player do?
+      description: E.g. "runs about 10% faster than sprinting", "hits from 4 blocks away".
+    validations:
+      required: true
+  - type: textarea
+    id: proof
+    attributes:
+      label: Video or `/ac logs` output
+      description: A short video helps a lot. Drag it in here or paste a link.
+  - type: dropdown
+    id: packetevents
+    attributes:
+      label: Is PacketEvents installed?
+      description: Several checks (Timer, BadPackets, Simulation) need it.
+      options: ["Yes", "No", Not sure]
+    validations:
+      required: true
+  - type: input
+    id: versions
+    attributes:
+      label: Versions
+      placeholder: MDAntiCheat 1.2.0, Paper 1.21.4-232, PacketEvents 2.14.0
+    validations:
+      required: true

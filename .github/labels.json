@@ -1,0 +1,33 @@
+[
+  { "name": "bug", "color": "d73a4a", "description": "Something is broken" },
+  { "name": "false-positive", "color": "e99695", "description": "A legit player gets flagged" },
+  { "name": "bypass", "color": "b60205", "description": "A cheat gets past a check" },
+  { "name": "suggestion", "color": "0e8a16", "description": "New feature or improvement" },
+  { "name": "question", "color": "d876e3", "description": "How something works or how to set it up" },
+
+  { "name": "needs-triage", "color": "ededed", "description": "New; not looked at yet" },
+  { "name": "needs-info", "color": "fef2c0", "description": "Waiting for more details from the reporter" },
+  { "name": "confirmed", "color": "1d76db", "description": "Reproduced; will be fixed" },
+  { "name": "planned", "color": "0052cc", "description": "Suggestion accepted; on the roadmap" },
+  { "name": "in progress", "color": "5319e7", "description": "Being worked on" },
+  { "name": "fixed in next release", "color": "0e8a16", "description": "Done; ships in the next update" },
+  { "name": "duplicate", "color": "cfd3d7", "description": "Already reported" },
+  { "name": "wontfix", "color": "ffffff", "description": "Won't be changed" },
+  { "name": "not a bug", "color": "cfd3d7", "description": "Works as intended" },
+
+  { "name": "priority: high", "color": "b60205", "description": "Do this first" },
+  { "name": "priority: medium", "color": "fbca04", "description": "Do this soon" },
+  { "name": "priority: low", "color": "c2e0c6", "description": "Nice to have" },
+
+  { "name": "area: movement", "color": "5319e7", "description": "Speed, Fly, NoFall, Jesus, Elytra, Simulation..." },
+  { "name": "area: combat", "color": "6f42c1", "description": "Reach, KillAura, Aim, AutoClicker, Criticals" },
+  { "name": "area: world", "color": "8a63d2", "description": "FastBreak, Nuker, Scaffold, Interact" },
+  { "name": "area: packets", "color": "4c2889", "description": "Timer, BadPackets, PacketEvents" },
+  { "name": "area: alerts", "color": "bfdadc", "description": "Alerts, /ac logs, Discord webhooks" },
+  { "name": "area: punishments", "color": "c5def5", "description": "Presets, LiteBans, AdvancedBan" },
+  { "name": "area: config", "color": "bfd4f2", "description": "config.yml settings and defaults" },
+  { "name": "area: bedrock", "color": "006b75", "description": "Geyser / Floodgate players" },
+
+  { "name": "platform: paper", "color": "f9d0c4", "description": "Happens on Paper or a fork" },
+  { "name": "platform: spigot", "color": "f9d0c4", "description": "Happens on Spigot" }
+]

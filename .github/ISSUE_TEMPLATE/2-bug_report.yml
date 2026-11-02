@@ -1,0 +1,57 @@
+name: Bug report
+description: Something is broken (errors, crashes, commands or settings not working)
+title: "[Bug] "
+labels: [bug, needs-triage]
+body:
+  - type: markdown
+    attributes:
+      value: For a legit player getting flagged, use the **False positive** form instead.
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: What you did, what you expected, and what happened instead.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Run /ac logs Steve
+        2. Click page 2
+        3. ...
+  - type: textarea
+    id: logs
+    attributes:
+      label: Console log / error
+      description: Paste the relevant part of `logs/latest.log`, from server start if it's a startup error.
+      render: text
+  - type: dropdown
+    id: impact
+    attributes:
+      label: How bad is it?
+      options: [Plugin doesn't load or crashes the server, A feature is broken, Minor or cosmetic]
+    validations:
+      required: true
+  - type: dropdown
+    id: software
+    attributes:
+      label: Server software
+      options: [Paper, Purpur, Spigot, Other Paper fork, Other]
+    validations:
+      required: true
+  - type: input
+    id: versions
+    attributes:
+      label: Versions
+      description: MDAntiCheat, server, Java and PacketEvents versions.
+      placeholder: MDAntiCheat 1.2.0, Paper 1.21.4-232, Java 21, PacketEvents 2.14.0
+    validations:
+      required: true
+  - type: textarea
+    id: config
+    attributes:
+      label: Config changes
+      description: Settings you changed in `plugins/AntiCheat/config.yml`, if any.
+      render: yaml

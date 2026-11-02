@@ -1,0 +1,16 @@
+name: Question
+description: Ask how something works or how to set it up
+title: "[Question] "
+labels: [question]
+body:
+  - type: textarea
+    id: question
+    attributes:
+      label: Your question
+    validations:
+      required: true
+  - type: input
+    id: versions
+    attributes:
+      label: Versions
+      placeholder: MDAntiCheat 1.2.0, Paper 1.21.4-232

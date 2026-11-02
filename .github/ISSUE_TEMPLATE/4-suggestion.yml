@@ -1,0 +1,31 @@
+name: Suggestion
+description: Suggest a new feature, check or improvement
+title: "[Suggestion] "
+labels: [suggestion, needs-triage]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What should it do?
+      description: Describe the feature and how you'd use it on your server.
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why?
+      description: The problem it solves for you or your staff.
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options: [A new check, An existing check, Alerts / logs / Discord, Punishments, Commands / permissions, Config, Bedrock / Geyser, Something else]
+    validations:
+      required: true
+  - type: textarea
+    id: extra
+    attributes:
+      label: Anything else?
+      description: Examples from other plugins, screenshots, config ideas...
