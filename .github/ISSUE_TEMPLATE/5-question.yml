@@ -13,4 +13,4 @@ body:
     id: versions
     attributes:
       label: Versions
-      placeholder: MDAntiCheat 1.2.0, Paper 1.21.4-232
+      placeholder: MDAntiCheat 2.0.0, Paper 1.21.4-232

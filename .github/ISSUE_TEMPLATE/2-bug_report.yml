@@ -46,7 +46,7 @@ body:
     attributes:
       label: Versions
       description: MDAntiCheat, server, Java and PacketEvents versions.
-      placeholder: MDAntiCheat 1.2.0, Paper 1.21.4-232, Java 21, PacketEvents 2.14.0
+      placeholder: MDAntiCheat 2.0.0, Paper 1.21.4-232, Java 21, PacketEvents 2.14.0
     validations:
       required: true
   - type: textarea
